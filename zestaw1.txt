@@ -1,0 +1,100 @@
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
+class Zestaw1 {
+    public static void main(String[] args) {
+        //Zad1
+        
+        System.out.println("Lukasz Ostrowka");
+        
+        //Zad2
+        String imie = "Lukasz";
+        String nazwisko = "Ostrowka";
+        System.out.println(imie.length());
+        System.out.println(nazwisko.length());
+        
+        //Zad3
+        String ala = "Ala";
+        String ma = "ma";
+        String kota = "kota";
+        System.out.println(ala + " " + ma + " " + kota);
+        
+        
+        
+        //Zad4.1
+        System.out.println("                    *");
+        System.out.println("                    * *");
+        System.out.println("                    * * *");
+        System.out.println("* * * * * * * * * * * * * *");
+        System.out.println("* * * * * * * * * * * * * * *");
+        System.out.println("* * * * * * * * * * * * * *");
+        System.out.println("                    * * *");
+        System.out.println("                    * *");
+        System.out.println("                    *");
+        
+        //Zad4.2
+        System.out.println("     *");
+        System.out.println("    * *");
+        System.out.println("   * * *");
+        System.out.println("  * * * *");
+        System.out.println(" * * * * *");
+        System.out.println("* * * * * *");
+        System.out.println(" * * * * *");
+        System.out.println("  * * * *");
+        System.out.println("   * * *");
+        System.out.println("    * *");
+        System.out.println("     *");
+        
+        //Zad 5
+        
+        String alamakota = "Ala ma kota";
+        System.out.println(alamakota.replace("a", "e"));
+        
+        //Zad 6
+        
+        System.out.println(alamakota.toUpperCase());
+        System.out.println(alamakota.toLowerCase());
+        
+        //Zad 7
+        
+        System.out.println((int) 'A');
+        System.out.println((int) '!');
+        System.out.println((int) '@');
+        System.out.println((int) '>');
+        System.out.println((int) '~');
+        System.out.println((int) '\n');
+        System.out.println((int) '\b');
+        
+        //Zad 8
+        System.out.println("Male litery znajduja sie w przedziale od " + (int) 'a' + " do " + (int) 'z');
+        System.out.println("Duze litery znajduja sie w przedziale od " + (int) 'A' + " do " + (int) 'Z');
+        System.out.println("Cyfry znajduja sie w przedziale od " + (int) '0' + " do " + (int) '9');
+        
+        //Zad 9
+        System.out.println("Grzesiek nie wiedzial dlaczego tygrys jest tak drapieznym ssakiem mimo, ze jego wyglad na to nie wskazuje.");
+        
+        //Zad 10
+        
+        System.out.println("Wiedzmin to najlepsza ksiazka napisana przez Sapkowskiego");
+        
+        //Zad 11
+        System.out.println("wodrze" + "wodrze" + "wodrze" + "wodrze" + "wodrze");
+        
+        //Zad 12
+        LocalDate data = LocalDate.now();
+        LocalTime czas = LocalTime.now();
+        System.out.println("Dzisiaj jest " + data + " godzina" + czas);
+        
+        //Zad 13
+        System.out.println((char) 54);
+        System.out.println((char) 103);
+        System.out.println((char) 241);
+        System.out.println((char) 67);
+        System.out.println((char) 9999);
+        System.out.println((char) imie.length());
+        System.out.println((char) nazwisko.length());
+        System.out.println((char) 174905);
+    }
+}

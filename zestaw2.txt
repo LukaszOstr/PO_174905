@@ -1,0 +1,33 @@
+
+
+
+class Zestaw2 {
+    public static void main(String[] args) {
+        
+        //Zad1
+        double a = 23.0+76;
+        double b = 41*2.0+3;
+        int c = 5-33;
+        int d = 109 % 3;
+        int e = 50/2;
+        int f = 4|2;
+        double g = Math.pow(3,5);
+        int h = 7 & 9;
+        
+        //Zad2
+        double i = (Math.sqrt(7) - 1)/ 2 + Math.pow(3,3) % 2;
+        System.out.println((int) i);
+        
+        double j = 2004/(18*8);
+        System.out.println((int) j);
+        
+        double k = (3 + Math.sqrt(3))/(Math.sqrt(5)/2)/3 + 1;
+        System.out.println((int) k);
+        
+        double l = 89.7 % 10.2 % 3; 
+        System.out.println((int) l);
+        
+        
+        
+    }
+}
