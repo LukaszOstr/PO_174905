@@ -1,4 +1,7 @@
 
+}
+
+import java.util.Scanner;
 
 
 class Zestaw2 {
@@ -27,7 +30,14 @@ class Zestaw2 {
         double l = 89.7 % 10.2 % 3; 
         System.out.println((int) l);
         
+        double m = (8 % 6 + 1) / Math.pow(2,1/4);
+        System.out.println((int) m);
         
+        //Zad3
         
-    }
-}
+        Scanner scan = new Scanner(System.in);
+        String n = scan.nextLine();
+        String o = scan.nextLine();
+        System.out.println(n + " " + o);
+   
+        //Zad4
