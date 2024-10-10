@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 
-class Zestaw1 {
+class Main {
     public static void main(String[] args) {
         //Zad1
         
