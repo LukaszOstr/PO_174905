@@ -236,45 +236,87 @@ public class zestaw4 {
 
     }
 
+    public static int[] najdluzszyCiagDodatnich(int[] tab){
 
 
-
-    public static int[] generujZakres(int n, int minWartosc, int maxWartosc){
-        Random rng = new Random();
-        int[] tab = new int[n];
-        if(n > 2){
-            int pierwsza = rng.nextInt(minWartosc,maxWartosc);
-            int druga = rng.nextInt(minWartosc,maxWartosc);
-            int roznica = Math.abs(pierwsza-druga);
-            tab[0] = pierwsza;
-            tab[1] = druga;
-
-            for(int i=2; i<n; i++){
-                int temp = rng.nextInt(minWartosc, maxWartosc);
-                //boolean rowny_odstep = true;
-                int j=0;
-
-                while(j<i){
-                    if(Math.abs(temp - tab[j]) != roznica){
-                        temp = rng.nextInt(minWartosc, maxWartosc);
-                        j=0;
-                    }
-                    else{
-                        j++;
-                    }
-                }
-
-
-                tab[i] = temp;
+        int n = 0;
+        for(int i=0; i<tab.length; i++){
+            if(tab[i] > 0){
+                n++;
             }
-            return tab;
+        }
+        int[] tab2 = new int[n];
+
+        for(int i=0, j=0; i<tab.length; i++){
+            if(tab[i] > 0){
+                tab2[j] = tab[i];
+                j++;
+            }
+        }
+        return tab2;
+
+    }
+
+    public static int[] najdluzszyCiagUjemnych(int[] tab){
+
+
+        int n = 0;
+        for(int i=0; i<tab.length; i++){
+            if(tab[i] < 0){
+                n++;
+            }
+        }
+        int[] tab2 = new int[n];
+
+        for(int i=0, j=0; i<tab.length; i++){
+            if(tab[i] < 0){
+                tab2[j] = tab[i];
+                j++;
+            }
+        }
+        return tab2;
+
+    }
+
+    public static void odwrocTablice(int[] tab){
+
+
+        int n = tab.length;
+
+
+
+        for(int i=0; i<n/2; i++){
+            int temp = tab[i];
+            tab[i] = tab[n-1-i];
+            tab[n-1-i] = temp;
+        }
+
+
+    }
+
+    public static void odwrocTablice(int[] tab, int indeksStart, int indeksStop){
+
+
+        int n = tab.length;
+        int[] tab2 = new int[indeksStop-indeksStart+1];
+
+        for(int i=indeksStart, j=0; i<=indeksStop; i++){
+            tab2[j] = tab[i];
+            j++;
+
+        }
+
+        odwrocTablice(tab2);
+
+
+
+        for(int i=indeksStart, j=0; i<=indeksStop; i++){
+            tab[i] = tab2[j];
+            j++;
 
         }
 
 
-
-
-        return tab;
     }
 
 
@@ -283,25 +325,26 @@ public class zestaw4 {
 
 
 
+
+
+
+
+
+
     public static void main(String[] args) {
-        int[] tab = generujTablice(4,-5,10);
-        double[] tab2 = funkcjaLiniowa(tab,2,2);
+        int[] tab = generujTablice(5,0,9);
+        //int[] tab2 = najdluzszyCiagUjemnych(tab);
         //tab.toString();
-        System.out.print(tab[0]);
-        System.out.print(" ");
-        System.out.println(tab2[0]);
+        for(int i=0; i<tab.length; i++){
+            System.out.println(tab[i]);
+        }
 
-        System.out.print(tab[1]);
-        System.out.print(" ");
-        System.out.println(tab2[1]);
+        System.out.println(" ");
 
-        System.out.print(tab[2]);
-        System.out.print(" ");
-        System.out.println(tab2[2]);
-
-        System.out.print(tab[3]);
-        System.out.print(" ");
-        System.out.println(tab2[3]);
+        odwrocTablice(tab,0,2);
+        for(int i=0; i<tab.length; i++){
+            System.out.println(tab[i]);
+        }
 
 
 
