@@ -13,6 +13,24 @@ public class zestaw4 {
         return tab;
     }
 
+    public static void wypiszTablice(int[][] tab, int n,  int m){
+
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+
+                System.out.print(tab[j][i]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+
+    }
+
+
+
+
+
     public static int ileNieparzystych(int[] tab){
         int n = tab.length;
         int suma = 0;
@@ -331,20 +349,24 @@ public class zestaw4 {
 
 
 
+
+
+
+
     public static void main(String[] args) {
         int[] tab = generujTablice(5,0,9);
-        //int[] tab2 = najdluzszyCiagUjemnych(tab);
-        //tab.toString();
-        for(int i=0; i<tab.length; i++){
-            System.out.println(tab[i]);
-        }
 
-        System.out.println(" ");
+        int[][] tab2 = new int[2][3];
+        tab2[0][0] = 1;
+        tab2[1][0] = 2;
+        tab2[0][1] = 3;
+        //tab2[1][1] = 4;
+        tab2[0][2] = 5;
+        tab2[1][2] = 6;
 
-        odwrocTablice(tab,0,2);
-        for(int i=0; i<tab.length; i++){
-            System.out.println(tab[i]);
-        }
+        wypiszTablice(tab2, 2,3);
+
+
 
 
 
