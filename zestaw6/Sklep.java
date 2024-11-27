@@ -29,6 +29,25 @@ public class Sklep {
         }
     }
 
+    public void wyszukajProduktu(String nazwa){
+        for(int i=0; i<this.produkty.size(); i++){
+            Produkt prod = this.produkty.get(i);
+            if(Objects.equals(prod.nazwa, nazwa)){
+                prod.wyswietlInformacje();
+            }
+        }
+    }
+
+    public void zakupy(KoszykZakupowy koszyk,Produkt produkt, int ilosc){
+        koszyk.dodajProdukt(produkt,ilosc);
+
+    }
+
+
+
+
+
+
 
 
 
