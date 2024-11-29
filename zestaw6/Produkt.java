@@ -1,12 +1,20 @@
+package zestaw6;
+
 public class Produkt{
     String nazwa;
     double cena;
     int iloscNaMagazynie;
 
+
     public Produkt(String nazwa, double cena, int iloscNaMagazynie){
         this.nazwa = nazwa;
         this.cena = cena;
         this.iloscNaMagazynie = iloscNaMagazynie;
+
+
+
+
+
     }
 
     public void wyswietlInformacje(){
@@ -16,16 +24,7 @@ public class Produkt{
         System.out.println();
     }
 
-    public void dodajDoMagazynu(int ilosc){
-        this.iloscNaMagazynie += ilosc;
-    }
 
-    public void usunZMagazynu(int ilosc){
-        if(ilosc <= iloscNaMagazynie){
-            this.iloscNaMagazynie -= ilosc;
-        }
-
-    }
 
 
 }

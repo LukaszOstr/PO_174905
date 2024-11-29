@@ -1,12 +1,16 @@
+package zestaw6;
+
 import java.security.Principal;
 import java.util.ArrayList;
 
 public class KoszykZakupowy {
 
-    ArrayList<Produkt> listaProduktow = new ArrayList<>();
+    ArrayList<Produkt> listaProduktow;
+    int[] ilosc;
 
-    public KoszykZakupowy(Produkt produkt){
-        this.listaProduktow.add(produkt);
+    public KoszykZakupowy(ArrayList<Produkt> produkty, int[] ilosc){
+        this.listaProduktow = produkty;
+        this.ilosc = ilosc;
     }
 
     public void dodajProdukt(Produkt produkt, int ilosc){

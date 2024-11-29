@@ -1,3 +1,5 @@
+package zestaw6;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -28,25 +30,6 @@ public class Sklep {
             System.out.println(prod.nazwa + " " + prod.cena);
         }
     }
-
-    public void wyszukajProduktu(String nazwa){
-        for(int i=0; i<this.produkty.size(); i++){
-            Produkt prod = this.produkty.get(i);
-            if(Objects.equals(prod.nazwa, nazwa)){
-                prod.wyswietlInformacje();
-            }
-        }
-    }
-
-    public void zakupy(KoszykZakupowy koszyk,Produkt produkt, int ilosc){
-        koszyk.dodajProdukt(produkt,ilosc);
-
-    }
-
-
-
-
-
 
 
 
