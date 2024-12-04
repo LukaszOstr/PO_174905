@@ -1,12 +1,13 @@
 package zestaw6;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Klient {
-    String imie;
-    String nazwisko;
-    ArrayList<Zamowienie> listaZamowien = new ArrayList<>();
-    Adres adres;
+    private String imie;
+    private String nazwisko;
+    private ArrayList<Zamowienie> listaZamowien = new ArrayList<>();
+    private Adres adres;
 
     public Klient(String imie, String nazwisko, Zamowienie zamowienie, Adres adres){
         this.imie = imie;
@@ -15,6 +16,52 @@ public class Klient {
         this.adres = adres;
     }
 
+    public void setAdres(Adres adres) {
+        if(adres != null){
+            this.adres = adres;
+        }
+        throw new IllegalArgumentException("blad");
+    }
+
+    public void setImie(String imie) {
+        if(imie != null){
+            this.imie = imie;
+        }
+        throw new IllegalArgumentException("blad");
+    }
+
+    public void setListaZamowien(ArrayList<Zamowienie> listaZamowien) {
+        if(listaZamowien != null){
+            this.listaZamowien = listaZamowien;
+        }
+        throw new IllegalArgumentException("blad");
+    }
+
+    public void setNazwisko(String nazwisko) {
+        if(nazwisko != null){
+            this.nazwisko = nazwisko;
+        }
+        throw new IllegalArgumentException("blad");
+    }
+
+    public Adres getAdres() {
+        return adres;
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public ArrayList<Zamowienie> getListaZamowien() {
+        return listaZamowien;
+
+    }
+
+
     public void dodajZamowienie(Zamowienie zamowienie){
         this.listaZamowien.add(zamowienie);
     }
@@ -22,7 +69,7 @@ public class Klient {
     public void wyswietlHistorieZamowien(){
         for(int i=0;i<this.listaZamowien.size();i++){
             Zamowienie zam = this.listaZamowien.get(i);
-            zam.wyswietlZamowienie();
+            System.out.println(zam);
 
 
         }
@@ -33,12 +80,33 @@ public class Klient {
         for(int i=0;i<this.listaZamowien.size();i++){
 
             Zamowienie zam = this.listaZamowien.get(i);
-            koszt += zam.koszykZakupowy.obliczCalkowitaWartosc();
+            koszt += zam.getKoszykZakupowy().obliczCalkowitaWartosc();
 
 
         }
 
         return koszt;
+    }
+
+    @Override
+    public String toString(){
+        return this.imie + " " + this.nazwisko + " " + this.listaZamowien + " " + this.adres;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(this.imie,this.nazwisko, this.adres);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this.getClass() == obj.getClass()){
+            return this.imie.equals(((Klient) obj).imie) && this.nazwisko.equals(((Klient) obj).nazwisko) && this.adres.equals(((Klient) obj).adres);
+        }
+        else{
+            return false;
+        }
+
     }
 
 

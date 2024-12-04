@@ -9,7 +9,6 @@ public class zestaw6 {
 
 
 
-
     public static void main(String[] args) {
 
         Produkt jablka = new Produkt("jablka",2.99,100);
@@ -17,13 +16,26 @@ public class zestaw6 {
         ArrayList<Produkt> p = new ArrayList<>();
         p.add(jablka);
         p.add(gruszki);
-        Magazyn magazyn = new Magazyn(p);
-        magazyn.dodajDoMagazynu(jablka,1000);
-        magazyn.dodajDoMagazynu(gruszki,1000);
-        magazyn.wyswietlAsortyment();
+        //System.out.println(p.getFirst());
+        KoszykZakupowy koszykZakupowy = new KoszykZakupowy(p);
 
-        Adres adres = new Adres("abc",11,"olsztyn","11-042");
-        adres.pokaz();
+
+
+
+        //Magazyn magazyn = new Magazyn(p);
+       // magazyn.dodajDoMagazynu(jablka,1000);
+       // magazyn.dodajDoMagazynu(gruszki,1000);
+       // magazyn.wyswietlAsortyment();
+
+       // Adres adres = new Adres("abc",11,"olsztyn","11-042");
+        //adres.pokaz();
+        //System.out.println(koszykZakupowy);
+        koszykZakupowy.dodajProdukt(jablka,7);
+        koszykZakupowy.dodajProdukt(gruszki,5);
+        //System.out.println(koszykZakupowy);
+
+
+        System.out.println(jablka.getClass());
 
 
 

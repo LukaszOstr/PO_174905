@@ -1,9 +1,11 @@
 package zestaw6;
 
+import java.util.Objects;
+
 public class Produkt{
-    String nazwa;
-    double cena;
-    int iloscNaMagazynie;
+    private String nazwa;
+    private double cena;
+    private int iloscNaMagazynie;
 
 
     public Produkt(String nazwa, double cena, int iloscNaMagazynie){
@@ -11,10 +13,33 @@ public class Produkt{
         this.cena = cena;
         this.iloscNaMagazynie = iloscNaMagazynie;
 
+    }
 
+    public void setCena(double cena) {
+        this.cena = cena;
+    }
 
+    public void setIloscNaMagazynie(int iloscNaMagazynie) {
+        this.iloscNaMagazynie = iloscNaMagazynie;
+    }
 
+    public void setNazwa(String nazwa) {
+        if(nazwa != null){
+            this.nazwa = nazwa;
+        }
 
+    }
+
+    public double getCena() {
+        return cena;
+    }
+
+    public int getIloscNaMagazynie() {
+        return iloscNaMagazynie;
+    }
+
+    public String getNazwa() {
+        return nazwa;
     }
 
     public void wyswietlInformacje(){
@@ -24,7 +49,24 @@ public class Produkt{
         System.out.println();
     }
 
+    @Override
+    public String toString(){
+        return nazwa + " " + cena + " " + iloscNaMagazynie;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(this.nazwa,this.cena);
+    }
 
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if(this.getClass() == obj.getClass()){
+            return this.nazwa.equals(((Produkt) obj).nazwa) && this.cena == ((Produkt) obj).cena;
+        }
+        else{
+            return false;
+        }
+    }
 }

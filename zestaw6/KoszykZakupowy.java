@@ -5,76 +5,85 @@ import java.util.ArrayList;
 
 public class KoszykZakupowy {
 
-    ArrayList<Produkt> listaProduktow;
-    int[] ilosc;
 
-    public KoszykZakupowy(ArrayList<Produkt> produkty, int[] ilosc){
+    private ArrayList<Produkt> listaProduktow;
+    private int[] ilosc;
+
+
+    public KoszykZakupowy(ArrayList<Produkt> produkty){
         this.listaProduktow = produkty;
-        this.ilosc = ilosc;
+        ilosc = new int[produkty.size()];
+
+
+        for(int i=0; i< ilosc.length; i++){
+            this.ilosc[i] = 0;
+        }
+    }
+
+    public void setIlosc(int[] ilosc) {
+        if(ilosc != null){
+            this.ilosc = ilosc;
+        }
+    }
+
+    public void setListaProduktow(ArrayList<Produkt> listaProduktow) {
+        if(listaProduktow != null){
+            this.listaProduktow = listaProduktow;
+        }
+
+    }
+
+    public int[] getIlosc() {
+        return ilosc;
+    }
+
+    public ArrayList<Produkt> getListaProduktow() {
+        return listaProduktow;
     }
 
     public void dodajProdukt(Produkt produkt, int ilosc){
 
-        while(ilosc > 0){
+        if(produkt.getIloscNaMagazynie() >= ilosc){
+            int i;
+            for(i=0;this.listaProduktow.get(i)!=produkt;i++){
 
-            if(produkt.iloscNaMagazynie > 0){
-                produkt.iloscNaMagazynie--;
+            }
+            this.ilosc[i] += ilosc;
+            produkt.setIloscNaMagazynie(produkt.getIloscNaMagazynie()-ilosc);
 
-                this.listaProduktow.add(produkt);
-                ilosc--;
-            }
-            else{
-                System.out.println("Brak produktu");
-                return;
-            }
         }
-
 
     }
 
-    public void wyswietlZawartoscKoszyka(){
-        ArrayList<Produkt> temp = new ArrayList<>();
 
-        for(int i=0; i<this.listaProduktow.size(); i++){
-            Produkt prod = this.listaProduktow.get(i);
-            if(!temp.contains(prod)) {
-                temp.add(prod);
-
-                System.out.println(prod.nazwa + " " + iloscProduktu(prod));
-
-            }
-        }
-    }
 
     public double obliczCalkowitaWartosc(){
 
-        ArrayList<Produkt> temp = new ArrayList<>();
+
         double cena = 0;
 
+
         for(int i=0; i<this.listaProduktow.size(); i++){
-            Produkt prod = this.listaProduktow.get(i);
+            cena += listaProduktow.get(i).getCena() * ilosc[i];
 
-            if(!temp.contains(prod)) {
-                temp.add(prod);
-                cena += prod.cena * iloscProduktu(prod);
-
-
-            }
         }
         return cena;
     }
 
-    int iloscProduktu(Produkt produkt){
-        int ilosc=0;
+
+
+    @Override
+    public String toString(){
+        StringBuilder napis = new StringBuilder();
+
 
         for(int i=0; i<this.listaProduktow.size(); i++){
-            if(listaProduktow.get(i) == produkt){
-                ilosc++;
-            }
+            Produkt prod = this.listaProduktow.get(i);
+            napis.append(prod.getNazwa()).append(" ").append(this.ilosc[i]).append(" ");
+
         }
 
-        return ilosc;
+        return napis.toString();
+
     }
-
-
 }
