@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.Objects;
 
-public class Platnosc {
+public class Platnosc implements PlatnoscInt {
 
     private double kwota;
     private String statusPlatnosci;
@@ -34,7 +34,7 @@ public class Platnosc {
         return statusPlatnosci;
     }
 
-
+    @Override
     public void zaplac(){
         this.statusPlatnosci = "Opłacone";
         this.kwota = 0;

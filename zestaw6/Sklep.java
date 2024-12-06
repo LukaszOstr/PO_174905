@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Sklep {
+public class Sklep implements SklepInt{
 
     private ArrayList<Produkt> produkty = new ArrayList<>();
     private String nazwaSklepu;
@@ -72,6 +72,7 @@ public class Sklep {
         return produkty;
     }
 
+    @Override
     public void dodajProdukt(Produkt nowyProd){
 
         for(int i=0; i<this.produkty.size();i++){
@@ -85,6 +86,7 @@ public class Sklep {
         this.produkty.add(nowyProd);
     }
 
+    @Override
     public void wyswietlOferty(){
         for(int i=0; i<this.produkty.size(); i++){
             Produkt prod = this.produkty.get(i);

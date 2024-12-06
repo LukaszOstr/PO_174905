@@ -3,9 +3,9 @@ package zestaw6;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Klient {
-    private String imie;
-    private String nazwisko;
+public class Klient extends Osoba implements KlientInt {
+    //private String imie;
+    //private String nazwisko;
     private ArrayList<Zamowienie> listaZamowien = new ArrayList<>();
     private Adres adres;
 
@@ -61,11 +61,12 @@ public class Klient {
 
     }
 
-
+    @Override
     public void dodajZamowienie(Zamowienie zamowienie){
         this.listaZamowien.add(zamowienie);
     }
 
+    @Override
     public void wyswietlHistorieZamowien(){
         for(int i=0;i<this.listaZamowien.size();i++){
             Zamowienie zam = this.listaZamowien.get(i);
@@ -75,6 +76,7 @@ public class Klient {
         }
     }
 
+    @Override
     public double obliczLacznyKosztZamowien(){
         double koszt=0;
         for(int i=0;i<this.listaZamowien.size();i++){

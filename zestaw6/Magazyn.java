@@ -3,7 +3,7 @@ package zestaw6;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Magazyn {
+public class Magazyn implements MagazynInt {
 
     private ArrayList<Produkt> produkty = new ArrayList<>();
     private int[] ilosc;
@@ -41,12 +41,14 @@ public class Magazyn {
         return produkty;
     }
 
+    @Override
     public void wyswietlAsortyment(){
         for(int i=0; i<produkty.size(); i++){
             System.out.println(produkty.get(i).getNazwa() + " " + ilosc[i]);
         }
     }
 
+    @Override
     public void dodajDoMagazynu(Produkt prod,int ilosc){
         prod.setIloscNaMagazynie(prod.getIloscNaMagazynie() + ilosc);
 
@@ -60,6 +62,7 @@ public class Magazyn {
 
     }
 
+    @Override
     public void usunZMagazynu(Produkt prod, int ilosc){
         if(ilosc <= prod.getIloscNaMagazynie()){
             prod.setIloscNaMagazynie(prod.getIloscNaMagazynie() - ilosc);

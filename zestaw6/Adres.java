@@ -2,7 +2,8 @@ package zestaw6;
 
 import java.util.Objects;
 
-public class Adres {
+
+public class Adres implements AdresInt {
     private String ulica;
     private int numerDomu;
     private int numerMieszkania;
@@ -81,7 +82,7 @@ public class Adres {
     }
 
 
-
+    @Override
     public void pokaz(){
         System.out.println(kodPocztowy + " " + miasto);
         if(numerMieszkania == 0){
@@ -95,6 +96,7 @@ public class Adres {
 
     }
 
+    @Override
     public boolean przed(Adres adres){
         if(Objects.equals(this.kodPocztowy, adres.kodPocztowy)){
             return true;

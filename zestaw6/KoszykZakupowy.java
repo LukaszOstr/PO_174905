@@ -3,7 +3,7 @@ package zestaw6;
 import java.security.Principal;
 import java.util.ArrayList;
 
-public class KoszykZakupowy {
+public class KoszykZakupowy implements KoszykZakupowyInt {
 
 
     private ArrayList<Produkt> listaProduktow;
@@ -41,6 +41,7 @@ public class KoszykZakupowy {
         return listaProduktow;
     }
 
+    @Override
     public void dodajProdukt(Produkt produkt, int ilosc){
 
         if(produkt.getIloscNaMagazynie() >= ilosc){
@@ -56,7 +57,7 @@ public class KoszykZakupowy {
     }
 
 
-
+    @Override
     public double obliczCalkowitaWartosc(){
 
 

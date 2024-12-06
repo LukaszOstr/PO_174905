@@ -1,6 +1,6 @@
 package zestaw6;
 
-public class Zamowienie {
+public class Zamowienie implements ZamowienieInt{
 
     private KoszykZakupowy koszykZakupowy;
     private String statusZamowienia;
@@ -32,7 +32,7 @@ public class Zamowienie {
     }
 
 
-
+    @Override
     public void ustawStatusZamowienia(String nowyStatus){
         this.statusZamowienia = nowyStatus;
     }

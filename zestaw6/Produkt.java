@@ -2,7 +2,7 @@ package zestaw6;
 
 import java.util.Objects;
 
-public class Produkt{
+public class Produkt implements ProduktInt{
     private String nazwa;
     private double cena;
     private int iloscNaMagazynie;
@@ -42,6 +42,8 @@ public class Produkt{
         return nazwa;
     }
 
+
+    @Override
     public void wyswietlInformacje(){
         System.out.println(nazwa);
         System.out.println(cena);
